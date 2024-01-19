@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var loot = ["Epée", "Bouclier", "Armure"]
+
+    func addItem() {
+        loot.append("Magie de feu")
+    }
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List {
+            Button(action: {
+                addItem()
+            }, label: {
+                Text("Ajouter")
+            })
+
+            ForEach(loot, id: \.self) { item in
+                Text(item)
+            }
         }
-        .padding()
     }
 }
 
