@@ -77,14 +77,28 @@ struct AddItemView: View {
                 }
             }
             Section{
-                Button(action: {
-                    let newItem = LootItem(name: selectedName, type: selectedType, rarity: selectedRarity, attackStrength: selectedAttackValue, game: selectedGame)
-                    inventory.addItem(item: newItem )
-                    dismiss()
+                if selectedName.count < 3{
+                    Text("Le nom doit faire au moins 3 caracteres")
+                        .foregroundStyle(Color.red)
+                    
+                }else if selectedGame == Game.emptyGame{
+                    Text("Le jeu doit-être sélectionné")
+                        .foregroundStyle(Color.red)
+                    
+                } else if selectedType == Itemtype.unknown{
+                    Text("Le type doit-être renseigné")
+                        .foregroundStyle(Color.red)
+                }else{
+                    Button(action: {
+                        let newItem = LootItem(name: selectedName, type: selectedType, rarity: selectedRarity, attackStrength: selectedAttackValue, game: selectedGame)
+                        inventory.addItem(item: newItem )
+                        dismiss()
+                    
+                    }, label: {
+                        Text("Ajouter l'objet")
+                    })
+                }
                 
-                }, label: {
-                    Text("Ajouter l'objet")
-                })
             }
         }
     }
