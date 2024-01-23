@@ -16,3 +16,11 @@
 ## exercice 2
 ##### Cela fonctionne de nouveau car maintenat le code declenche automatiquement des mises à jour de l’interface utilisateur lorque les propriétés de l'objet changent
 ##### @StateObject est utilisé pour les nouveaux objets observables que la vue possède alors que @ObservedObject est utilisé pour les objets observables que la vue n'a pas créé mais simplement reçu. State n'est pas adapté aux objets
+
+# Page 5
+## exercice 2
+##### On a une erreur qui nous parle de identifiable car le code a besoin de l'id du jeu pour pouvoir l'identifier, et le type de l'id doit etre en UUID
+
+# Page 7
+## exercice 2
+##### Si on attend pas avant de lancer l'animation, l'animation se lance trop tot et se superpose à l'animation d'affichage de la page (la page glisse vers la gauche). Ce n'est pas bien pour l'experience utilisateur, ça fait brouillon.
