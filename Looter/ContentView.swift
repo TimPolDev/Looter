@@ -15,22 +15,7 @@ class Inventory: ObservableObject {
     }
 }
 
-func rarityColor(rarity: Rarity) -> Color {
-        switch rarity {
-        case .common:
-            return Color.gray
-        case .uncommon:
-            return Color.green
-        case .rare:
-            return Color.blue
-        case .epic:
-            return Color.purple
-        case .legendary:
-            return Color.orange
-        case .unique:
-            return Color.red
-        }
-    }
+
 
 struct ContentView: View {
     @StateObject var inventory = Inventory()

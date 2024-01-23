@@ -31,6 +31,40 @@ enum Rarity:String, CaseIterable{
     case unique
 }
 
+func rarityColor(rarity: Rarity) -> Color {
+        switch rarity {
+        case .common:
+            return Color.gray
+        case .uncommon:
+            return Color.green
+        case .rare:
+            return Color.blue
+        case .epic:
+            return Color.purple
+        case .legendary:
+            return Color.orange
+        case .unique:
+            return Color.red
+        }
+    }
+
+func rarityName(rarity: Rarity) -> String {
+        switch rarity {
+        case .common:
+            return "Common"
+        case .uncommon:
+            return "Uncommon"
+        case .rare:
+            return "Rare"
+        case .epic:
+            return "Epic"
+        case .legendary:
+            return "Legendary"
+        case .unique:
+            return "Unique"
+        }
+    }
+
 struct LootItem:Identifiable{
     var id: UUID = UUID()
     var quantity:Int = 1
