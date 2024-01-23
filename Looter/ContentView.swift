@@ -29,22 +29,7 @@ struct ContentView: View {
                     NavigationLink{
                             LootDetailView(item: item) // On passe directement l'item à la vue
                     }label:{
-                        HStack{
-                            Color(rarityColor(rarity: item.rarity))
-                                .frame(width: 15, height: 15)
-                                .clipShape(Circle())
-                            VStack(alignment: .leading){
-                                Text(item.name)
-                                if let attackStrength = item.attackStrength {
-                                    Text("Puissance : \(String(attackStrength))")
-                                }
-                            }
-                            Spacer()
-                            Text(item.type.rawValue)
-                            
-                            
-                            
-                        }
+                        ExtractedView(item: item)
                     }
                     
                     
@@ -71,3 +56,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
