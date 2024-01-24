@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		923741A92B6167E100661FDA /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923741A82B6167E100661FDA /* OnboardingView.swift */; };
+		923741AB2B6167E900661FDA /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923741AA2B6167E900661FDA /* OnboardingPageView.swift */; };
 		92BC88F62B5A795800BD2776 /* LooterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC88F52B5A795800BD2776 /* LooterApp.swift */; };
 		92BC88F82B5A795800BD2776 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC88F72B5A795800BD2776 /* ContentView.swift */; };
 		92BC88FA2B5A795900BD2776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92BC88F92B5A795900BD2776 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		923741A82B6167E100661FDA /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		923741AA2B6167E900661FDA /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		92BC88F22B5A795800BD2776 /* Looter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Looter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BC88F52B5A795800BD2776 /* LooterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooterApp.swift; sourceTree = "<group>"; };
 		92BC88F72B5A795800BD2776 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		92BC88E92B5A795700BD2776 = {
 			isa = PBXGroup;
 			children = (
+				923741A82B6167E100661FDA /* OnboardingView.swift */,
+				923741AA2B6167E900661FDA /* OnboardingPageView.swift */,
 				92EF6B9C2B5FC802009BD61D /* LootRow.swift */,
 				92BC88F42B5A795800BD2776 /* Looter */,
 				92BC88F32B5A795800BD2776 /* Products */,
@@ -155,9 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				923741AB2B6167E900661FDA /* OnboardingPageView.swift in Sources */,
 				92BC88F82B5A795800BD2776 /* ContentView.swift in Sources */,
 				92EF6B9D2B5FC802009BD61D /* LootRow.swift in Sources */,
 				92BC89082B5A9A9000BD2776 /* Game.swift in Sources */,
+				923741A92B6167E100661FDA /* OnboardingView.swift in Sources */,
 				92BC89042B5A7FCF00BD2776 /* AddItemView.swift in Sources */,
 				92EF6B9F2B5FCB2C009BD61D /* LootInformation.swift in Sources */,
 				92BC890C2B5AD39100BD2776 /* LootDetailView.swift in Sources */,
