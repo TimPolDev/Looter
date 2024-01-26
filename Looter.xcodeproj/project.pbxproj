@@ -17,6 +17,9 @@
 		92BC89062B5A8B3100BD2776 /* LootItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC89052B5A8B3100BD2776 /* LootItem.swift */; };
 		92BC89082B5A9A9000BD2776 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC89072B5A9A9000BD2776 /* Game.swift */; };
 		92BC890C2B5AD39100BD2776 /* LootDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BC890B2B5AD39100BD2776 /* LootDetailView.swift */; };
+		92EB7F842B63A7FD00A546D6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EB7F832B63A7FD00A546D6 /* HomeView.swift */; };
+		92EB7F862B63A89000A546D6 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EB7F852B63A89000A546D6 /* WishListView.swift */; };
+		92EB7F882B63A89A00A546D6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EB7F872B63A89A00A546D6 /* ProfileView.swift */; };
 		92EF6B9D2B5FC802009BD61D /* LootRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF6B9C2B5FC802009BD61D /* LootRow.swift */; };
 		92EF6B9F2B5FCB2C009BD61D /* LootInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EF6B9E2B5FCB2C009BD61D /* LootInformation.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +36,9 @@
 		92BC89052B5A8B3100BD2776 /* LootItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootItem.swift; sourceTree = "<group>"; };
 		92BC89072B5A9A9000BD2776 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		92BC890B2B5AD39100BD2776 /* LootDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootDetailView.swift; sourceTree = "<group>"; };
+		92EB7F832B63A7FD00A546D6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		92EB7F852B63A89000A546D6 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
+		92EB7F872B63A89A00A546D6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		92EF6B9C2B5FC802009BD61D /* LootRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootRow.swift; sourceTree = "<group>"; };
 		92EF6B9E2B5FCB2C009BD61D /* LootInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +82,9 @@
 				92BC89032B5A7FCF00BD2776 /* AddItemView.swift */,
 				92BC88F52B5A795800BD2776 /* LooterApp.swift */,
 				92BC88F72B5A795800BD2776 /* ContentView.swift */,
+				92EB7F872B63A89A00A546D6 /* ProfileView.swift */,
+				92EB7F852B63A89000A546D6 /* WishListView.swift */,
+				92EB7F832B63A7FD00A546D6 /* HomeView.swift */,
 				92EF6B9E2B5FCB2C009BD61D /* LootInformation.swift */,
 				92BC88F92B5A795900BD2776 /* Assets.xcassets */,
 				92BC88FB2B5A795900BD2776 /* Preview Content */,
@@ -162,15 +171,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				923741AB2B6167E900661FDA /* OnboardingPageView.swift in Sources */,
+				92EB7F882B63A89A00A546D6 /* ProfileView.swift in Sources */,
 				92BC88F82B5A795800BD2776 /* ContentView.swift in Sources */,
 				92EF6B9D2B5FC802009BD61D /* LootRow.swift in Sources */,
 				92BC89082B5A9A9000BD2776 /* Game.swift in Sources */,
 				923741A92B6167E100661FDA /* OnboardingView.swift in Sources */,
+				92EB7F842B63A7FD00A546D6 /* HomeView.swift in Sources */,
 				92BC89042B5A7FCF00BD2776 /* AddItemView.swift in Sources */,
 				92EF6B9F2B5FCB2C009BD61D /* LootInformation.swift in Sources */,
 				92BC890C2B5AD39100BD2776 /* LootDetailView.swift in Sources */,
 				92BC89062B5A8B3100BD2776 /* LootItem.swift in Sources */,
 				92BC88F62B5A795800BD2776 /* LooterApp.swift in Sources */,
+				92EB7F862B63A89000A546D6 /* WishListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

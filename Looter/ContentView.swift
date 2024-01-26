@@ -7,50 +7,46 @@
 
 import SwiftUI
 
-class Inventory: ObservableObject {
-    @Published var loot: [LootItem] = testData
-    
-    func addItem(item: LootItem) {
-        loot.append(item)
-    }
+enum LooterFeature {
+    case loot
+    case wishList
+    case profile
 }
-
-
-
 struct ContentView: View {
+    @AppStorage("isOnboarding") var isOnboarding:Bool?
     @StateObject var inventory = Inventory()
     
     @State var showAddItemView = false
+    
+    @State private var selectedFeature: LooterFeature = .loot
+    
+    func reset(){
+        isOnboarding = true
+    }
 
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(inventory.loot) { item in
-                    NavigationLink{
-                            LootDetailView(item: item) // On passe directement l'item à la vue
-                    }label:{
-                        ExtractedView(item: item)
+        
+        Button(action: reset, label: {
+            Text("reset")
+        })
+            TabView(selection: $selectedFeature) {
+                HomeView()
+                    .tabItem {
+                        Label("Loot", systemImage: "bag.fill")
                     }
-                    
-                    
-                }
+                    .tag(LooterFeature.loot)
+                WishListView()
+                    .tabItem {
+                        Label("Wishlist", systemImage: "heart.fill")
+                    }
+                    .tag(LooterFeature.wishList)
+                ProfileView()
+                    .tabItem {
+                        Label("Profil", systemImage: "person.fill")
+                    }
+                    .tag(LooterFeature.profile)
             }
-            .sheet(isPresented: $showAddItemView, content: {
-                    AddItemView()
-                    .environmentObject(inventory)
-                })
-            .navigationBarTitle("Loot") // Notre titre de page, choisissez le titre que vous voulez
-                .toolbar(content: { // La barre d'outil de notre page
-                    ToolbarItem(placement: ToolbarItemPlacement.automatic) {
-                        Button(action: {
-                            showAddItemView.toggle() // L'action de notre bouton
-                        }, label: {
-                            Image(systemName: "plus.circle.fill")
-                        })
-                    }
-                })
         }
-    }
 }
 
 #Preview {

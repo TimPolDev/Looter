@@ -12,6 +12,8 @@ struct LootDetailView: View {
     @State private var scaleUnique:Int = 0
     @State private var animate1 = false
     @State private var animate2 = false
+    @State var showAddItemView = false
+    @StateObject var inventory = Inventory()
     var item:LootItem
     var body: some View {
         
@@ -70,7 +72,20 @@ struct LootDetailView: View {
                 }
                 
             }
-        }
+        }.sheet(isPresented: $showAddItemView, content: {
+            AddItemView(item: item)
+            .environmentObject(inventory)
+        })
+    .navigationBarTitle("Loot") // Notre titre de page, choisissez le titre que vous voulez
+        .toolbar(content: { // La barre d'outil de notre page
+            ToolbarItem(placement: ToolbarItemPlacement.automatic) {
+                Button(action: {
+                    showAddItemView.toggle() // L'action de notre bouton
+                }, label: {
+                    Image(systemName: "plus.circle.fill")
+                })
+            }
+        })
        
             List{
                 LootInformation(item:item)

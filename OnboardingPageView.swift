@@ -9,36 +9,85 @@ import SwiftUI
 
 
 
+
 struct OnboardingPageView: View {
-    let page : Page
+    var id : UUID = UUID()
+    var title : String
+    var description : String
+    var image : String
+    var finish : Bool?
     
+    @AppStorage("isOnboarding") var isOnboarding:Bool?
+    
+    @State private var scale: CGFloat = 0.1 // Pour l'animation de l'image
+
+    
+    func start(){
+        isOnboarding = false
+    }
     var body: some View {
         VStack(alignment: .center){
             Spacer()
             VStack{
-                Text(page.title)
+                Text(title)
+                    .font(.title)
+                    .fontWeight(.bold)
                     .foregroundColor(Color.white)
+                    .padding(.bottom, 25.0)
+                    
+                    
                     
                 
-                Text(page.image)
-                    .foregroundColor(Color.blue)
+                Image(image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 200)
                     .padding(.all, 50.0)
-                    .background(Color.white)
+                    .cornerRadius(20)
+                    .scaleEffect(scale) // Appliquer l'effet de mise à l'échelle
+                    .onAppear {
+                        withAnimation(.easeIn(duration: 0.3)) {
+                            self.scale = 1.0 // Animer l'image lors de l'apparition
+                        }
+                    }
                 
-                    .cornerRadius(360.0)
-                Text(page.description)
-                    .foregroundColor(Color.white)
+                    
+                
+                if finish != true {
+                    Text(description)
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 30.0)
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 20.0)
+                }else{
+                    Text(description)
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 30.0)
+                        .padding(.horizontal, 20)
+                }
             }
             .frame(width: 400.0)
+            
             Spacer()
-            Text("Suivant")
-                .foregroundColor(Color.blue)
-                .background(Color.white)
-                .padding(.all, 32.0)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                .cornerRadius(/*@START_MENU_TOKEN@*/12.0/*@END_MENU_TOKEN@*/)
+            
+            if finish == true {
+                Button("Commencer", action: start)
+                    .padding(.bottom, 80.0)
+                    .frame(height: 20)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.white)
+            }
+            
                 
-        }.background(Color.blue)
+        }
+        
+            
             
         
         
@@ -47,5 +96,5 @@ struct OnboardingPageView: View {
 }
 
 #Preview {
-    OnboardingPageView(page : Page(title: "test", description: "description", image: "img"))
+    OnboardingPageView(title: "Gérer ses loots", description: "Créez une liste de souhaits pour garder une trace des achats que vous souhaitez acquérir", image: "epees-croisees")
 }

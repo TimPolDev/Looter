@@ -73,6 +73,7 @@ struct LootItem:Identifiable{
     var rarity: Rarity
     var attackStrength :Int?
     var game: Game
+    var setPower:Bool = false
     
     
 }
